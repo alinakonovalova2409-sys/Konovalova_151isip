@@ -1,0 +1,374 @@
+
+ :root {
+  --bg-color: #ffffff;
+  --text-color: #111111;
+  --card-bg: #f5f5f7;
+  --card-border: #e0e0e0;
+  --btn-bg: #e8e8ed;
+  --btn-text: #111111;
+  --transition: 0.3s ease;
+  
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #121212;
+    --text-color: #e8e8ed;
+    --card-bg: #1e1e1e;
+    --card-border: #333333;
+    --btn-bg: #2a2a2a;
+    --btn-text: #e8e8ed;
+    color-scheme: dark;
+  }
+}
+
+[data-theme="light"] {
+  --bg-color: #ffffff;
+  --text-color: #111111;
+  --card-bg: #f5f5f7;
+  --card-border: #e0e0e0;
+  --btn-bg: #e8e8ed;
+  --btn-text: #111111;
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #e8e8ed;
+  --card-bg: #1e1e1e;
+  --card-border: #333333;
+  --btn-bg: #2a2a2a;
+  --btn-text: #e8e8ed;
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 2rem;
+  transition: background-color var(--transition), color var(--transition);
+  line-height: 1.6;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+#theme-toggle {
+  padding: 0.6rem 1.2rem;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all var(--transition);
+}
+
+#theme-toggle:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 1.5rem;
+  transition: background-color var(--transition), border-color var(--transition);
+  max-width: 600px;
+}
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #fef9f0 0%, #fff7eb 100%);
+            color: #2c2418;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        /* Контейнер для центрирования контента */
+        header, main, footer {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+        }
+
+        /* ШАПКА */
+        header {
+            background: #2e241f;
+            color: #f9eed7;
+            border-radius: 0 0 2rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 12px 25px -10px rgba(0,0,0,0.2);
+        }
+
+        header h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #FFE6B0, #D4A373);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: none;
+            margin: 0.5rem 0 0.8rem;
+        }
+
+        /* навигация */
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 1rem 0 0.5rem;
+            flex-wrap: wrap;
+            padding-left: 0;
+        }
+
+        nav a {
+            color: #f5e7cf;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.3rem 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            border-bottom-color: #E6B17E;
+            color: #FFE6B0;
+        }
+
+        /* основной контент */
+        main {
+            background: rgba(255, 252, 245, 0.85);
+            backdrop-filter: blur(2px);
+            border-radius: 2rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            padding: 2rem 2rem 2.5rem;
+        }
+
+        section {
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: 1.9rem;
+            font-weight: 600;
+            color: #7b3f1a;
+            border-left: 6px solid #e2a76f;
+            padding-left: 1rem;
+            margin: 0 0 1.8rem 0;
+        }
+
+        /* СПЕЦИАЛЬНОЕ ОФОРМЛЕНИЕ ДЛЯ ВОПРОСОВ (FAQ) — ТАКОЕ ЖЕ КРАСИВОЕ, КАК НА ГЛАВНОЙ */
+        .faq-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.4rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .faq-item {
+            background: #fffcf5;
+            border-radius: 1.5rem;
+            border: 1px solid #f0e1ce;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            transition: all 0.2s ease;
+            overflow: hidden;
+            padding: 0;
+        }
+
+        .faq-item:hover {
+            border-color: #dbba94;
+            background: #fffef8;
+            box-shadow: 0 8px 18px rgba(104, 55, 19, 0.08);
+            transform: translateY(-2px);
+        }
+
+        /* заголовок вопроса */
+        .faq-question {
+            font-weight: 700;
+            font-size: 1.2rem;
+            padding: 1.2rem 1.5rem 0.6rem 1.8rem;
+            color: #7b3f1a;
+            background: #fff9f0;
+            border-bottom: 1px dashed #f4e2cf;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .faq-question::before {
+            content: "🎵";
+            font-size: 1.4rem;
+            color: #d48f54;
+        }
+
+        /* блок ответа */
+        .faq-answer {
+            padding: 0.8rem 1.8rem 1.3rem 3rem;
+            font-size: 1rem;
+            color: #2d2a26;
+            line-height: 1.5;
+            background: #fffcf8;
+        }
+
+        .faq-answer ul {
+            margin: 0.5rem 0 0.2rem 0;
+            padding-left: 1.2rem;
+        }
+
+        .faq-answer li {
+            margin: 0.2rem 0;
+        }
+
+        /* дополнительный совет (как на главной) */
+        .tips-micro {
+            background: #fef3e8;
+            border-radius: 1.5rem;
+            margin-top: 2.5rem;
+            padding: 1.2rem 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            border-left: 5px solid #e2a76f;
+        }
+
+        .tips-micro p {
+            margin: 0;
+            font-weight: 500;
+            color: #6b3f1c;
+        }
+
+        .tips-micro span {
+            font-size: 1.6rem;
+        }
+
+        /* Футер (полностью повторяет стиль главной) */
+        footer {
+            background: #1e1915;
+            color: #ebddcf;
+            margin-top: 3rem;
+            border-radius: 2rem 2rem 1rem 1rem;
+            padding: 2rem;
+            box-shadow: 0 -5px 15px rgba(0,0,0,0.05);
+        }
+
+        footer h3 {
+            color: #f3cca3;
+            border-bottom: 2px solid #b87b46;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            display: inline-block;
+            font-size: 1.6rem;
+            font-weight: 600;
+        }
+
+        footer li {
+            margin-left: 1.2rem;
+            color: #ecd9c2;
+        }
+
+        footer ul {
+            margin: 0.8rem 0 0.8rem 1rem;
+        }
+
+        footer .footer-text {
+            margin-bottom: 0.8rem;
+            line-height: 1.5;
+        }
+
+        footer p {
+            margin-bottom: 0.8rem;
+        }
+
+        /* адаптивность */
+        @media (max-width: 760px) {
+            header, main, footer {
+                padding: 1rem 1.2rem;
+            }
+            header h1 {
+                font-size: 1.8rem;
+            }
+            h2 {
+                font-size: 1.6rem;
+            }
+            .faq-question {
+                font-size: 1.05rem;
+                padding: 1rem 1rem 0.4rem 1.2rem;
+            }
+            .faq-answer {
+                padding: 0.6rem 1.2rem 1rem 1.8rem;
+                font-size: 0.95rem;
+            }
+            .faq-question::before {
+                font-size: 1.1rem;
+            }
+            .tips-micro {
+                padding: 1rem;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav ul {
+                gap: 1rem;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            body {
+                font-size: 0.95rem;
+            }
+            .faq-question {
+                padding: 0.8rem 1rem 0.3rem 1rem;
+            }
+            .faq-answer {
+                padding: 0.5rem 1rem 1rem 1.5rem;
+            }
+        }
+
+        .faq-grid, .faq-grid li {
+            list-style: none;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, #f0ddc5, transparent);
+            margin: 1.2rem 0;
+        }
+
+        .subnote {
+            font-size: 0.9rem;
+            color: #8f6a48;
+            margin-top: 0.2rem;
+        }
+        
+        /* исправление для nav ul (если был вставлен некорректный тег a без li) */
+        nav li {
+            display: inline-block;
+        }
+        nav a {
+            display: inline-block;
+        }
